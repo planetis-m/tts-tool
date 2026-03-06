@@ -1,0 +1,4 @@
+interface:
+  display_name: "TTS Assistant"
+  short_description: "Rewrite text for natural speech and generate an opus file"
+  default_prompt: "Use $tts-assistant to rewrite my text or markdown into TTS-friendly speech, insert chunk breaks, run chunktts, and tell me where the final .opus file was written."
