@@ -69,13 +69,13 @@ Rewrite for natural speech, not visual fidelity.
 You decide where `<break>` goes.
 
 - Chunk by spoken thought units, not document structure.
-- Use paragraphs and list items as the default units.
+- Use whole paragraphs and list items as the default units.
 - Headings are optional source hints, not mandatory spoken content.
 - Drop generic headings that do not improve the listening experience.
 - Keep a heading only if it adds real spoken meaning and sounds natural aloud.
 - Prefer shorter spoken sentences. If a sentence sounds dense or awkward, rewrite
   it into two shorter natural sentences before chunking.
-- If a chunk is too long, split first at sentence boundaries.
+- If a paragraph or list item is too long, split it first at sentence boundaries.
 - Split inside a sentence only as a last resort.
 - Keep chunks conservative for Kokoro-82M:
   - target about `260-420` characters
