@@ -39,19 +39,47 @@ Always preprocess the text yourself before running `chunktts`.
 
 ## Rewrite for Speech
 
-Read and apply [references/commands.md](references/commands.md) before writing the
-temporary input file.
+Rewrite for natural speech, not visual fidelity.
 
-Global rules:
+- Remove markdown syntax such as `#`, `##`, `*`, `_`, `` ` ``, `>`, code fences,
+  table pipes, and horizontal rules.
+- Keep visible text, not formatting.
+- Turn bullet and numbered list items into normal spoken sentences.
+- For markdown links, keep the visible link text and drop the raw URL target,
+  unless the URL itself is the important content.
+- Rewrite raw URLs into natural spoken form. Do not leave `http://`, `https://`,
+  query strings, fragments, or symbol-heavy path syntax unless they must be spoken.
+- Rewrite email addresses into forms like `name at domain dot com`.
+- Remove LaTeX delimiters like `$`, `$$`, `\(`, `\)`, `\[`, `\]`.
+- Rewrite common TeX or math notation into words, such as:
+  - `\alpha` -> `alpha`
+  - `\beta` -> `beta`
+  - `=` -> `equals`
+  - `+` -> `plus`
+  - `-` -> `minus`
+  - `/` -> `over`
+  - `^2` -> `squared`
+  - `^3` -> `cubed`
+- Rewrite file paths, flags, and technical identifiers into more speakable text.
+  Avoid long runs of punctuation or symbols.
+- Drop decorative content that has no spoken value.
 
-- Rewrite for natural speech, not visual fidelity.
-- Remove or rewrite symbols instead of leaving them literal.
-- Convert markdown, URLs, LaTeX, and technical notation into speech-friendly text.
-- Decide the best places to insert `<break>`.
+## Chunking
+
+You decide where `<break>` goes.
+
+- Chunk by spoken thought units, not document structure.
+- Use paragraphs and list items as the default units.
+- Headings are optional source hints, not mandatory spoken content.
+- Drop generic headings that do not improve the listening experience.
+- Keep a heading only if it adds real spoken meaning and sounds natural aloud.
+- If a chunk is short and flows naturally with the next one, merge them.
+- If a chunk is too long, split first at sentence boundaries.
+- If it is still too long, split at commas, semicolons, or other clause breaks.
 - Keep chunks conservative for Kokoro-82M:
-  - target about `220-320` characters
-  - preferred upper bound `360`
-  - hard ceiling `420`
+  - target about `180-320` characters
+  - preferred upper bound `340`
+  - hard ceiling `380`
 - Never emit empty chunks.
 - Collapse repeated `<break>` markers.
 
