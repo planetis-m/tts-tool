@@ -1,6 +1,6 @@
-# TTS Assistant Skill
+# TTS Tool Skill
 
-`tts-assistant` is an installable Agent Skill for turning text or markdown into
+`tts-tool` is an installable Agent Skill for turning text or markdown into
 pleasant speech audio with `chunktts`.
 
 ## Features
@@ -29,24 +29,24 @@ Codex recommends installing non-built-in skills using the `$skill-installer`.
 Prompt Codex with:
 
 ```text
-$skill-installer install the skill from repo planetis-m/tts-assistant with path .
+$skill-installer install the skill from repo planetis-m/tts-tool with path .
 ```
 
 ### Manual Install
 Clone directly into your agent's scanned skills path:
 
 ```bash
-git clone https://github.com/planetis-m/tts-assistant.git ~/.agents/skills/tts-assistant
+git clone https://github.com/planetis-m/tts-tool.git ~/.agents/skills/tts-tool
 ```
 
 ## Usage Examples
 
-Invoke the skill explicitly using `$tts-assistant` in your prompts:
+Invoke the skill explicitly using `$tts-tool` in your prompts:
 
 ```text
-Use $tts-assistant to turn this markdown into a pleasant spoken .opus file.
+Use $tts-tool to turn this markdown into a pleasant spoken .opus file.
 ```
 
 ```text
-Use $tts-assistant on notes.md and generate the final audio.
+Use $tts-tool on notes.md and generate the final audio.
 ```

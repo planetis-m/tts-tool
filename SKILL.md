@@ -1,9 +1,9 @@
 ---
-name: tts-assistant
+name: tts-tool
 description: Text-to-speech workflow for turning user-provided text or markdown into pleasant `.opus` audio with `chunktts`. Use when text contains symbols, URLs, formulas, markdown, or technical notation that should be rewritten for natural speech before TTS.
 ---
 
-# TTS Assistant
+# TTS Tool
 
 Follow this workflow exactly to turn text into pleasant speech audio.
 
