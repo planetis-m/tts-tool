@@ -7,13 +7,7 @@ description: Text-to-speech workflow for turning user-provided text or markdown 
 
 Follow this workflow exactly to turn text into pleasant speech audio.
 
-## Resolve Input
-
-This skill is text-only.
-
-- If the user provides a text or markdown file, read that file.
-- If the user pastes text directly, use that text as the source.
-- Do not use OCR or PDF extraction.
+Do not add verification steps unless the user explicitly asks for them.
 
 ## Process TTS Input
 
