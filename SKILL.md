@@ -65,6 +65,7 @@ You decide where `<bk>` goes.
 
 - Chunk by spoken thought units, not by document structure.
 - Use whole paragraphs and list items as the default chunking units.
+- Do not insert `<bk>` after every sentence by default. Keep adjacent short sentences together when they form one spoken thought and still fit comfortably within the chunk size limits.
 - Treat headings as optional hints, not mandatory spoken content.
 - Drop generic headings that do not improve the listening experience.
 - Keep a heading only if it adds real spoken meaning and sounds natural aloud.
